@@ -6,8 +6,16 @@ menuIcon.onclick = () => {
     navbar.classList.toggle('active');
 };
 
+let skill_show= document.querySelector('#skill');
+let skill_hide=document.querySelector('.skill-view');
+let skill_icon=document.querySelector('#skill-icon');
 
 
+
+skill_hide.onclick = () => {
+    skill_icon.classList.toggle('bx-chevron-up');
+    skill_show.classList.toggle('skill-hide')
+}
 
 let sections = document.querySelectorAll('section');
 let navLinks = document.querySelectorAll('header nav a');
@@ -51,3 +59,14 @@ window.onscroll = () => {
     loop: true,
    
  });
+ 
+function sendmail(){
+    let params = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        body: document.getElementById('body').value,
+        body: document.getElementById('body').value,
+        number: document.getElementById('number').value
+    }
+    emailjs.send("service_y8q1sv8","template_7aikvqg",params).then(alert("Email send!!"));
+}
